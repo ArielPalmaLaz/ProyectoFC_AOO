@@ -22,11 +22,11 @@ public class Matriz {
         } while (!this.comprobacionLetra(String.valueOf(str))); //n*tc
         for (int i = 0; i < filas; i++) { //F(tc+to+ta)
             for (int j = 0; j < columnas; j++) { //F*[C*(tc+to+ta)]
-                a[i][j] = str; // F*C*(ta+to)
+                a[i][j] = str; // F*C*(ta)
             }
         }
         /* 
-          TM = ta + ta + ta + ta + nta + ntc + F(
+          TM = ta + ta + ta + ta + nta + ntc + F(tc+ta) + F*[C*(tc+ta)] + F*(Cta)
           TIEMPO ESTIMADO =ta + ta + ta + ta + nta + ntc + Ftc + Fto + Fta + ta + F[C(tc+to+ta)+ta]
                           =5ta + n(ta+tc) + F(tc+to+ta) + F[(Ctc+Cto+Cta)+ta]
                           =5ta + n(ta+tc) + F[(tc+to+ta)+(Ctc+Cto+Cta)+ta]
