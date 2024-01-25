@@ -10,7 +10,7 @@ public class Matriz {
     }
     
     // Método para llenar la matriz con el símbolo dado.
-    public String[][] llenarMatriz(String a[][]) {
+     public String[][] llenarMatriz(String a[][]) {
         //USAREMOS 2 VARIABLES, F = número de filas, C = Número de columnas
         Scanner sc = new Scanner(System.in); //ta
         String str; //ta
