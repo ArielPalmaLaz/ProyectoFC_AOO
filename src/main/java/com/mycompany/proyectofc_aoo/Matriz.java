@@ -18,18 +18,17 @@ public class Matriz {
         int columnas = a[0].length;//ta 
         do {
             System.out.println("Elija con que caracter se llenara la matriz"); 
-            str = sc.next(); //n*ta 
-        } while (!this.comprobacionLetra(String.valueOf(str))); //n*tc
-        for (int i = 0; i < filas; i++) { //F(tc+to+ta)
-            for (int j = 0; j < columnas; j++) { //F*[C*(tc+to+ta)]
+            str = sc.next(); //(n+1)*ta 
+        } while (!this.comprobacionLetra(String.valueOf(str))); //(n+1)*2tc 
+        for (int i = 0; i < filas; i++) { //F(2tc+to+2ta)
+            for (int j = 0; j < columnas; j++) { //F*[C*(2tc+to+2ta)]
                 a[i][j] = str; // F*C*(ta)
             }
         }
         /* 
-          TM = ta + ta + ta + ta + nta + ntc + F(tc+ta) + F*[C*(tc+ta)] + F*(Cta)
-          TIEMPO ESTIMADO =ta + ta + ta + ta + nta + ntc + Ftc + Fto + Fta + ta + F[C(tc+to+ta)+ta]
-                          =5ta + n(ta+tc) + F(tc+to+ta) + F[(Ctc+Cto+Cta)+ta]
-                          =5ta + n(ta+tc) + F[(tc+to+ta)+(Ctc+Cto+Cta)+ta]
+          TIEMPO ESTIMADO = ta + ta + ta + ta + nta + 2ntc + F(tc+2ta+to) + F*[C*(to+2tc+2ta)] + F*(Cta)
+                          = 4ta + nta + (n+1)*2tc + F[2tc+2ta+to+Cto+2Ctc+3Cta}
+                          Al no existir una una condición de Búsqueda no existen ni mejor ni peor Tiempo,
         */
         return a; // Devuelve la matriz llena.
     }
@@ -46,27 +45,33 @@ public class Matriz {
     // Método para mostrar el patrón A en la matriz.
     public void mostrarA(String a[][]) {
         int filas = a.length;  //ta
-        for (int i = 0; i < filas; i++) {  //F*(ta+to+tc)
-            for (int j = 0; j <= i; j++) { //[F(F+1)/2]*(ta+tc+to)
-                System.out.print(a[i][j] + " "); // Fto
+        for (int i = 0; i < filas; i++) {  //F*(2ta+to+2tc)
+            for (int j = 0; j <= i; j++) { //[F(F+1)/2]*(2ta+2tc+to)
+                System.out.print(a[i][j] + " "); // [F(F+1)/2]*to
             }
             System.out.println(""); // Salto de línea al final de cada fila.
         }
         /*
-        TIEMPO ESTIMADO = ta+F(ta+to+tc)+ta+F(ta+to+tc)+ta+Fto
-                        = 3ta + 2F(ta+to+tc)+to
+        TIEMPO ESTIMADO = ta + F(2ta+to+2tc) + [F(F+1)/2]*(2ta+to+2tc) + [F(F+1)/2]*to
+                        = ta + F(2ta+to+2tc) + [F(F+1)/2]*[(2ta+to+2tc) + to]
+                        Al no existir una una condición de Búsqueda no existen ni mejor ni peor Tiempo,
         */
     }
 
     // Método para mostrar el patrón B en la matriz.
     public void mostrarB(String a[][]) {
         int controlador = a.length; //ta
-        for (int i = 0; i < a.length; i++) {  //F*(ta+tc+to)+ta
-            for (int j = 0; j < controlador; j++) { //F*F(ta+tc+to)+ta
-                System.out.print(a[i][j] + " "); // F*to
+        for (int i = 0; i < a.length; i++) {  //F*(2ta+to+2tc)
+            for (int j = 0; j < controlador; j++) { //[F(F+1)/2]*(2ta+2tc+to)
+                System.out.print(a[i][j] + " "); // [F(F+1)/2]*to
             }
             controlador--; // Controla la cantidad de elementos a mostrar en cada fila.
             System.out.println(""); // Salto de línea al final de cada fila.
+                    /*
+        TIEMPO ESTIMADO = ta + F(2ta+to+2tc) + [F(F+1)/2]*(2ta+to+2tc) + [F(F+1)/2]*to
+                        = ta + F(2ta+to+2tc) + [F(F+1)/2]*[(2ta+to+2tc) + to]
+                        Al no existir una una condición de Búsqueda no existen ni mejor ni peor Tiempo,
+        */
         }
     }
 }
