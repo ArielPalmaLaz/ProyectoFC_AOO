@@ -60,6 +60,8 @@ public class Matriz {
                         
         Tp = ta + F(ta+to+tc)+ta+tc + [F(F+1)/2](3ta+3tc+2to) + [F(F+1)/2]to
         Tp = 2ta + tc + F(ta+to+tc) + [F(F+1)/2](3ta+3tc+3to)
+        
+        Tu = (Tm + Tp)/2
         */
     }
 
@@ -76,8 +78,11 @@ public class Matriz {
                     /*
         Tm= ta + ta + tc 
         Tm= 2ta + tc 
+        
         Tp= ta + F(2ta+to+2tc) + [F(F+1)/2]*(2ta+to+2tc) + [F(F+1)/2]*to + F(ta+to)
         Tp= ta + F(3ta+2to+2tc) + [F(F+1)/2]*[(2ta+2to+2tc)]
+        
+        Tu = (Tm + Tp)/2    
         */
         }
     }

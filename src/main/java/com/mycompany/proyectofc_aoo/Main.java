@@ -60,8 +60,12 @@ public class Main {
         
             Tm = 2ta + ta + ta + ta + ta + tc 
             Tm = 5ta + N + tc
+            
+        
             Tp = 5ta + N + tc 
-                
+            
+        
+            Tu = (Tm + Tp)/2
         */ 
     }
 }
