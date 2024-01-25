@@ -52,12 +52,16 @@ public class Main {
         } while (op != 4); // W = Número de veces que se repite el menu.            W+tc
         
         /*
-            Tm = 2ta + ta + ta + ta + ta + tc 
-            
-            Tp = 5ta + W{ta+A[x+ta+x+tc+ta+ 5ta + (n+1)(ta+2tc) 
+        
+            N = W{ta+A[x+ta+x+tc+ta+ 5ta + (n+1)(ta+2tc) 
                 + F(2ta + 2tc + to + 2Cta + Cto + Ctc) + tc) +2to] 
                 + B[tc+2+ta+tc+ F(ta+to+tc) + (F(F+1)/2](3ta+3tc+3to))]
-                + C[ta+F(3ta+2to+2tc) + (F(F+1)/2)(2ta+to+2tc)]} + 1 + tc
+                + C[ta+F(3ta+2to+2tc) + (F(F+1)/2)(2ta+to+2tc)] +D(tc)+1}
+        
+            Tm = 2ta + ta + ta + ta + ta + tc 
+            Tm = 5ta + N + tc
+            Tp = 5ta + N + tc 
+                
         */ 
     }
 }
